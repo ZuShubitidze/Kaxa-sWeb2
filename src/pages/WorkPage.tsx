@@ -1,5 +1,5 @@
 import { array } from "@/components/CarouselComponent";
-import { Card } from "@/components/ui/card";
+import WorkCard from "@/components/WorkCard";
 import { useParams } from "react-router-dom";
 
 const WorkPage = () => {
@@ -19,14 +19,7 @@ const WorkPage = () => {
       </section>
       <main className="w-2/3">
         {work.map(({ id, img, name }) => (
-          <Card key={id} className="p-4 md:p-10 flex flex-col items-center">
-            <span className="text-2xl md:text-4xl font-semibold">{name}</span>
-            <img
-              src={img}
-              alt="image1"
-              className="object-cover lg:w-2/3 rounded-lg"
-            />
-          </Card>
+          <WorkCard key={id} id={id} img={img} name={name} />
         ))}
       </main>
     </div>
