@@ -81,9 +81,7 @@ const Navbar = () => {
       <main className="mb-auto">
         <Outlet />
       </main>
-      <footer>
-        <Footer />
-      </footer>
+      <Footer />
     </body>
   );
 };

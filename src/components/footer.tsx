@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="p-10 flex flex-row justify-around">
+    <footer className="p-30 flex justify-around">
       <p>© {new Date().getFullYear()}</p>
     </footer>
   );

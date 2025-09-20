@@ -1,6 +1,7 @@
-import { test } from "vitest";
+import { expect, test } from "vitest";
 import Contact from "../pages/Contactpage";
 import { screen } from "@testing-library/react";
+import { render } from "@testing-library/react";
 
 test("renders Contact Page Header correctly", () => {
   render(<Contact />);

@@ -1,4 +1,6 @@
 import About from "../pages/Aboutpage";
+import { expect, test } from "vitest";
+import { render, screen } from "@testing-library/react";
 
 test("renders About Page correctly", () => {
   render(<About />);

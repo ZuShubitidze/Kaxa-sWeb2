@@ -6,29 +6,22 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Link } from "react-router-dom";
-import image1 from "@/assets/1.jpeg";
-import image2 from "@/assets/2.jpeg";
-import image3 from "@/assets/3.jpeg";
-import image4 from "@/assets/4.jpeg";
-import { Card, CardContent } from "./ui/card";
+import { Card, CardContent } from "./card";
 
-export const array = [
-  { img: image1, name: "სამუშაო 1", id: "1" },
-  { img: image2, name: "სამუშაო 2", id: "2" },
-  { img: image3, name: "სამუშაო 3", id: "3" },
-  { img: image4, name: "სამუშაო 4", id: "4" },
-];
+interface CarouselComponentProps {
+  items: { img: string; name: string; id: string }[];
+}
 
-const CarouselComponent = () => {
+const CarouselComponent = ({ items }: CarouselComponentProps) => {
   return (
-    <Carousel className="w-2/3">
+    <Carousel id="carousel" className="w-2/3">
       <CarouselContent>
-        {array.map(({ img, name, id }) => (
+        {items.map(({ img, name, id }) => (
           <CarouselItem key={id} className="basis-1/1 lg:basis-1/3">
             <Link to={`/${id}`}>
               <Card>
                 <CardContent className="flex flex-col aspect-square items-center gap-10">
-                  <span className="text-3xl font-semibold">{name}</span>
+                  <span className="text-3xl font-semibold">Name: {name}</span>
                   <img src={img} alt={name} className="w-full" />
                 </CardContent>
               </Card>

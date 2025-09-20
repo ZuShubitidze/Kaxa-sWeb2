@@ -1,5 +1,6 @@
-import { MemoryRouter } from "react-router-dom";
 import App from "../App";
+import { expect, test } from "vitest";
+import { render, screen } from "@testing-library/react";
 
 test("navigates to about page on link click", () => {
   render(<App />);

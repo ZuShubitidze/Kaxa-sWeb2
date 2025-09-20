@@ -9,7 +9,7 @@ const contacts = {
 
 export default function Contactspage() {
   return (
-    <main className="max-w-2xl mx-auto sm:p-8">
+    <main className="max-w-4xl mx-auto sm:p-8">
       {/* Header */}
       <section>
         <h1 className="text-3xl font-semibold mb-8 tracking-tight">

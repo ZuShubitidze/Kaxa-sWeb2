@@ -1,10 +1,11 @@
-import { array } from "@/components/CarouselComponent";
 import WorkCard from "@/components/WorkCard";
+import type { WorkCard as WorkCardType } from "@/interfaces/WorkCard.iterface";
 import { useParams } from "react-router-dom";
+import { array } from "./Homepage";
 
 const WorkPage = () => {
   const { id } = useParams();
-  const work = array.filter((i) => i.id === id);
+  const work = array.filter((i: WorkCardType) => i.id === id);
 
   return (
     <div className="flex flex-row px-5 md:px-20 gap-10">
@@ -18,7 +19,7 @@ const WorkPage = () => {
         </p>
       </section>
       <main className="w-2/3">
-        {work.map(({ id, img, name }) => (
+        {work.map(({ id, img, name }: WorkCardType) => (
           <WorkCard key={id} id={id} img={img} name={name} />
         ))}
       </main>
