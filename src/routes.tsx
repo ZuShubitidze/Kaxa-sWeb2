@@ -2,8 +2,8 @@ import Aboutpage from "./pages/Aboutpage";
 import Contactpage from "./pages/Contactpage";
 import { Link } from "react-router-dom";
 import Navbar from "./components/navbar";
-import Workpage from "./pages/Workpage";
 import Homepage from "./pages/Homepage";
+import Workpage from "./pages/Workpage";
 
 function NotFound() {
   return (
