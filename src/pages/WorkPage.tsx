@@ -3,7 +3,7 @@ import type { WorkCard as WorkCardType } from "@/interfaces/workCard.interface";
 import { useParams } from "react-router-dom";
 import { array } from "./Homepage";
 
-const WorkPage = () => {
+const Workpage = () => {
   const { id } = useParams();
   const work = array.filter((i: WorkCardType) => i.id === id);
 
@@ -27,4 +27,4 @@ const WorkPage = () => {
   );
 };
 
-export default WorkPage;
+export default Workpage;

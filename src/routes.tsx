@@ -1,9 +1,9 @@
-import Homepage from "./pages/Homepage";
 import Aboutpage from "./pages/Aboutpage";
 import Contactpage from "./pages/Contactpage";
 import { Link } from "react-router-dom";
 import Navbar from "./components/navbar";
-import WorkPage from "./pages/Workpage";
+import Workpage from "./pages/Workpage";
+import Homepage from "./pages/Homepage";
 
 function NotFound() {
   return (
@@ -22,7 +22,7 @@ const routes = [
       { index: true, element: <Homepage /> },
       { path: "about", element: <Aboutpage /> },
       { path: "contact", element: <Contactpage /> },
-      { path: ":id", element: <WorkPage /> },
+      { path: ":id", element: <Workpage /> },
       { path: "*", element: <NotFound /> },
     ],
   },
