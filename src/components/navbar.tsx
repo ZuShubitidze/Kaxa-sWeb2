@@ -12,7 +12,7 @@ import {
 
 const Navbar = () => {
   return (
-    <body className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col">
       <header>
         {/* Computer Menu */}
         <nav className="hidden md:block">
@@ -82,7 +82,7 @@ const Navbar = () => {
         <Outlet />
       </main>
       <Footer />
-    </body>
+    </div>
   );
 };
 

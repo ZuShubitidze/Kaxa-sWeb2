@@ -1,5 +1,5 @@
 import WorkCard from "@/components/WorkCard";
-import type { WorkCard as WorkCardType } from "@/interfaces/WorkCard.iterface";
+import type { WorkCard as WorkCardType } from "@/interfaces/workCard.interface";
 import { useParams } from "react-router-dom";
 import { array } from "./Homepage";
 
