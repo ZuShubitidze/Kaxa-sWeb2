@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import { Card, CardContent } from "./card";
 
 interface CarouselComponentProps {
-  items: { img: string; name: string; id: string }[];
+  items: { img: string[]; name: string; id: string }[];
 }
 
 const CarouselComponent = ({ items }: CarouselComponentProps) => {
@@ -22,7 +22,7 @@ const CarouselComponent = ({ items }: CarouselComponentProps) => {
               <Card>
                 <CardContent className="flex flex-col aspect-square items-center gap-10">
                   <span className="text-3xl font-semibold">Name: {name}</span>
-                  <img src={img} alt={name} className="w-full" />
+                  <img src={img[0]} alt={name} className="w-full" />
                 </CardContent>
               </Card>
             </Link>

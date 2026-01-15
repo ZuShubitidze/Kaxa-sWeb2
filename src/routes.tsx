@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import Navbar from "./components/navbar";
 import Homepage from "./pages/Homepage";
 import Workpage from "./pages/Workpage";
+import Products from "./pages/Products";
+import CompletedWorks from "./pages/CompletedWorks";
 
 function NotFound() {
   return (
@@ -22,6 +24,8 @@ const routes = [
       { index: true, element: <Homepage /> },
       { path: "about", element: <Aboutpage /> },
       { path: "contact", element: <Contactpage /> },
+      { path: "products", element: <Products /> },
+      { path: "completed-works", element: <CompletedWorks /> },
       { path: ":id", element: <Workpage /> },
       { path: "*", element: <NotFound /> },
     ],
@@ -29,4 +33,3 @@ const routes = [
 ];
 
 export default routes;
-//

@@ -13,7 +13,7 @@ import {
 const Navbar = () => {
   return (
     <div className="min-h-screen flex flex-col">
-      <header>
+      <header className="mb-8">
         {/* Computer Menu */}
         <nav className="hidden md:block">
           <div className="flex flex-row items-center md:gap-20 p-10 ">
@@ -25,16 +25,22 @@ const Navbar = () => {
               მთავარი გვერდი
             </Link>
             <Link
+              to={"/completed-works"}
+              className="hover:bg-white hover:text-black p-2 rounded-md transition-all duration-300"
+            >
+              შესრულებული სამუშაოები
+            </Link>
+            <Link
+              to={"/products"}
+              className="hover:bg-white hover:text-black p-2 rounded-md transition-all duration-300"
+            >
+              პროდუქტები
+            </Link>
+            <Link
               to={"/contact"}
               className="hover:bg-white hover:text-black p-2 rounded-md transition-all duration-300"
             >
               კონტაქტი
-            </Link>
-            <Link
-              to={"/about"}
-              className="hover:bg-white hover:text-black p-2 rounded-md transition-all duration-300"
-            >
-              ჩემს შესახებ
             </Link>
           </div>
         </nav>
