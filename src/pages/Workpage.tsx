@@ -1,13 +1,19 @@
+import SEO from "@/components/SEO";
 import WorkCard from "@/components/WorkCard";
 import { completedWorksArray } from "@/data/completedWorks";
 import type { WorkCard as WorkCardType } from "@/interfaces/workCard.interface";
 import { useParams } from "react-router-dom";
 
-const Workpage = () => {
+const WorkPage = () => {
   const { id } = useParams();
   const work = completedWorksArray.filter((i: WorkCardType) => i.id === id);
   return (
-    <div className="flex flex-row px-5 md:px-20 gap-10">
+    <main className="flex flex-row px-5 md:px-20 gap-10">
+      <SEO
+        title="შესრულებული სამუშაო"
+        description="კახა შუბითიძის მიერ შესრულებული სამუშაო."
+        path={`/work/${id}`}
+      />
       <section className="w-1/3 flex flex-col gap-10 mt-10">
         <h1>ეს არის ჩემს მიერ შესრულებული სამუშაო</h1>
         <p>
@@ -22,8 +28,8 @@ const Workpage = () => {
           <WorkCard key={id} id={id} img={img} name={name} />
         ))}
       </section>
-    </div>
+    </main>
   );
 };
 
-export default Workpage;
+export default WorkPage;

@@ -14,6 +14,6 @@ export default defineConfig({
     environment: "jsdom",
     globals: true, // <-- make expect, describe, it, etc. global like Jest
     setupFiles: "src/test/setupTests.ts",
-    include: ["src/**/*.{test,spec}.{ts,tsx}"],
+    include: ["src/**/*.{test,spec}.{ts,tsx},"],
   },
 });

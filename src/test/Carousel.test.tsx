@@ -28,8 +28,8 @@ vi.mock("@/components/ui/carousel", () => {
 });
 // Mock data for testing
 const mockItems = [
-  { img: "test1.jpg", name: "Test Item 1", id: "1" },
-  { img: "test2.jpg", name: "Test Item 2", id: "2" },
+  { img: ["test1.jpg", "test1b.jpg"], name: "Test Item 1", id: "1" },
+  { img: ["test2.jpg", "test2b.jpg"], name: "Test Item 2", id: "2" },
 ];
 
 describe("Carousel component", () => {

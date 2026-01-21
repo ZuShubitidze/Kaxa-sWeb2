@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import Contact from "../pages/Contactpage";
+import Contact from "../pages/ContactPage";
 import { screen } from "@testing-library/react";
 import { render } from "@testing-library/react";
 
@@ -12,7 +12,7 @@ describe("Contactpage component", () => {
   test("renders Contact Page Email correctly", () => {
     render(<Contact />);
     expect(
-      screen.getByText(/kaxabershubitidze123@gmail.com/i)
+      screen.getByText(/kaxabershubitidze123@gmail.com/i),
     ).toBeInTheDocument();
   });
 

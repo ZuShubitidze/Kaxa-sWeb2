@@ -1,4 +1,4 @@
-import Workpage from "@/pages/Workpage";
+import Workpage from "@/pages/WorkPage";
 import { render, screen } from "@testing-library/react";
 import { test, expect, vi, describe } from "vitest";
 
@@ -20,14 +20,14 @@ describe("Workpage component", () => {
   test("renders header correctly", () => {
     render(<Workpage />);
     expect(
-      screen.getByText(/ეს არის ჩემს მიერ შესრულებული სამუშაო/i)
+      screen.getByText(/ეს არის ჩემს მიერ შესრულებული სამუშაო/i),
     ).toBeInTheDocument();
   });
 
   test("renders paragraph correctly", () => {
     render(<Workpage />);
     expect(
-      screen.getByText(/This is the description of this work/i)
+      screen.getByText(/This is the description of this work/i),
     ).toBeInTheDocument();
   });
 });

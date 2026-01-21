@@ -1,4 +1,5 @@
 import Kaxa from "@/assets/Kaxa.png";
+import SEO from "@/components/SEO";
 
 const contacts = {
   name: "Kaxa Shubitidze",
@@ -7,9 +8,14 @@ const contacts = {
   avatar: Kaxa,
 };
 
-export default function Contactspage() {
+export default function ContactPage() {
   return (
     <main className="max-w-4xl mx-auto sm:p-8">
+      <SEO
+        title="კონტაქტი"
+        description="კახა და ზურა შუბითიძის საკონტაქტო ინფორმაცია."
+        path="/contact"
+      />
       {/* Header */}
       <section>
         <h1 className="text-3xl font-semibold mb-8 tracking-tight">
@@ -32,7 +38,7 @@ export default function Contactspage() {
               {contacts.name}
             </div>
             <div className="text-sm sm:text-2xl text-muted-foreground">
-              <a href="mailto:kaxabershubitidze123@gmail.com">
+              <a href="mailto:kaxabershubitidze71@gmail.com">
                 {contacts.email}
               </a>
             </div>

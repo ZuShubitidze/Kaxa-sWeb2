@@ -1,11 +1,17 @@
+import SEO from "@/components/SEO";
 import WorkCard from "@/components/WorkCard";
 import { productsArray } from "@/data/products";
 import type { WorkCard as WorkCardType } from "@/interfaces/workCard.interface";
 
 const Products = () => {
   return (
-    <section className="flex flex-col gap-20 items-center mx-10 md:mx-30">
-      <h1>შესრულებული სამუშაოები</h1>
+    <main className="flex flex-col gap-20 items-center mx-10 md:mx-30">
+      <SEO
+        title="პროდუქტები"
+        description="კახა შუბითიძის გასაყიდი პროდუქტები."
+        path="/products"
+      />
+      <h1>პროდუქტები</h1>
       <ul className="flex flex-col gap-20">
         {productsArray.map(({ id, img, name, price }: WorkCardType) => (
           <li className="flex flex-row gap-10" key={id}>
@@ -27,7 +33,7 @@ const Products = () => {
           </li>
         ))}
       </ul>
-    </section>
+    </main>
   );
 };
 

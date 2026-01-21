@@ -1,32 +1,36 @@
-import Aboutpage from "./pages/Aboutpage";
-import Contactpage from "./pages/Contactpage";
 import { Link } from "react-router-dom";
-import Navbar from "./components/navbar";
-import Homepage from "./pages/Homepage";
-import Workpage from "./pages/Workpage";
+import { lazy } from "react";
+import Root from "./components/navbar";
 import Products from "./pages/Products";
 import CompletedWorks from "./pages/CompletedWorks";
+import ContactPage from "./pages/ContactPage";
+import WorkPage from "./pages/WorkPage";
+
+const HomePage = lazy(() => import("./pages/HomePage"));
+const AboutPage = lazy(() => import("./pages/AboutPage"));
 
 function NotFound() {
   return (
-    <h2>
-      404 - Page Not Found <Link to="/">Return Home</Link>
-      <Link to="/">უკან დაბრუნება</Link>
-    </h2>
+    <div>
+      <h2>404 – Page Not Found</h2>
+      <p>
+        <Link to="/">Return Home</Link> | <Link to="/">უკან დაბრუნება</Link>
+      </p>
+    </div>
   );
 }
 
 const routes = [
   {
     path: "/",
-    element: <Navbar />,
+    element: <Root />,
     children: [
-      { index: true, element: <Homepage /> },
-      { path: "about", element: <Aboutpage /> },
-      { path: "contact", element: <Contactpage /> },
+      { index: true, element: <HomePage /> },
+      { path: "about", element: <AboutPage /> },
+      { path: "contact", element: <ContactPage /> },
       { path: "products", element: <Products /> },
       { path: "completed-works", element: <CompletedWorks /> },
-      { path: ":id", element: <Workpage /> },
+      { path: "work/:id", element: <WorkPage /> },
       { path: "*", element: <NotFound /> },
     ],
   },

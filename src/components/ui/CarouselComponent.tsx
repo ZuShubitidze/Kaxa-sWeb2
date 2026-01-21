@@ -18,7 +18,7 @@ const CarouselComponent = ({ items }: CarouselComponentProps) => {
       <CarouselContent>
         {items.map(({ img, name, id }) => (
           <CarouselItem key={id} className="basis-1/1 lg:basis-1/3">
-            <Link to={`/${id}`}>
+            <Link to={`/work/${id}`}>
               <Card>
                 <CardContent className="flex flex-col aspect-square items-center gap-10">
                   <span className="text-3xl font-semibold">Name: {name}</span>

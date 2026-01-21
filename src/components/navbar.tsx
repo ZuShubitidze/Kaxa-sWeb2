@@ -10,7 +10,7 @@ import {
   NavigationMenuTrigger,
 } from "./ui/navigation-menu";
 
-const Navbar = () => {
+const Root = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <header className="mb-8">
@@ -84,12 +84,12 @@ const Navbar = () => {
         </div>
         {/* Outlet and Footer */}
       </header>
-      <main className="mb-auto">
+      <div className="mb-auto">
         <Outlet />
-      </main>
+      </div>
       <Footer />
     </div>
   );
 };
 
-export default Navbar;
+export default Root;
