@@ -28,8 +28,8 @@ vi.mock("@/components/ui/carousel", () => {
 });
 // Mock data for testing
 const mockItems = [
-  { img: ["test1.jpg", "test1b.jpg"], name: "Test Item 1", id: "1" },
-  { img: ["test2.jpg", "test2b.jpg"], name: "Test Item 2", id: "2" },
+  { img: ["test1.jpg", "test1b.jpg"], name: "Test Item 1", id: "1", price: 20 },
+  { img: ["test2.jpg", "test2b.jpg"], name: "Test Item 2", id: "2", price: 20 },
 ];
 
 describe("Carousel component", () => {
@@ -38,12 +38,12 @@ describe("Carousel component", () => {
     render(
       <MemoryRouter>
         <CarouselComponent items={mockItems} />
-      </MemoryRouter>
+      </MemoryRouter>,
     );
 
     // Verify all carousel items are rendered.
     expect(screen.getAllByTestId("mock-carousel-item")).toHaveLength(
-      mockItems.length
+      mockItems.length,
     );
 
     // Loop through the mock items to perform assertions.
@@ -51,7 +51,7 @@ describe("Carousel component", () => {
       expect(screen.getByText(`Name: ${item.name}`)).toBeInTheDocument();
       expect(screen.getByAltText(item.name)).toBeInTheDocument();
       expect(
-        screen.getByRole("link", { name: new RegExp(item.name) })
+        screen.getByRole("link", { name: new RegExp(item.name) }),
       ).toHaveAttribute("href", `/${item.id}`);
     });
   });
@@ -60,7 +60,7 @@ describe("Carousel component", () => {
     render(
       <MemoryRouter>
         <CarouselComponent items={[]} />
-      </MemoryRouter>
+      </MemoryRouter>,
     );
 
     // Verify that the carousel content is rendered but no items exist.

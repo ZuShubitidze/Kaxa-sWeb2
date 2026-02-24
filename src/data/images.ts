@@ -1,6 +1,9 @@
-import image1 from "@/assets/1.jpeg";
-import image2 from "@/assets/2.jpeg";
-import image3 from "@/assets/3.jpeg";
-import image4 from "@/assets/4.jpeg";
-
-export const imageArray = [image1, image2, image3, image4];
+export const imageModules = import.meta.glob(
+  "../../public/*.{png,jpg,jpeg,svg}",
+  {
+    eager: true,
+    import: "default",
+  },
+);
+// Convert the object into a simple array or formatted object
+export const images = Object.values(imageModules) as string[];

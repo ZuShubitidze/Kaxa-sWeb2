@@ -25,7 +25,7 @@ const WorkPage = () => {
       </section>
       <section className="w-2/3">
         {work.map(({ id, img, name }: WorkCardType) => (
-          <WorkCard key={id} id={id} img={img} name={name} />
+          <WorkCard key={id} img={img} name={name} />
         ))}
       </section>
     </main>

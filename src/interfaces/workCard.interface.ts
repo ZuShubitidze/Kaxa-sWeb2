@@ -1,6 +1,6 @@
 export interface WorkCard {
-  id: string;
+  id?: string;
   img: string | string[];
   name: string;
-  price?: number;
+  price?: number | string;
 }

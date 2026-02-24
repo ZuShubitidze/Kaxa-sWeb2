@@ -1,7 +1,8 @@
 {
   "projects": {
     "default": "kaxa-web",
-    "dev": "kaxa-web-dev-1a2a1"
+    "dev": "kaxa-web-dev-1a2a1",
+    "Production": "kaxa-web"
   },
   "targets": {},
   "etags": {}

@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
 import { lazy } from "react";
-import Root from "./components/navbar";
+import Root from "./components/Root";
 import Products from "./pages/Products";
 import CompletedWorks from "./pages/CompletedWorks";
 import ContactPage from "./pages/ContactPage";
 import WorkPage from "./pages/WorkPage";
 
 const HomePage = lazy(() => import("./pages/HomePage"));
-const AboutPage = lazy(() => import("./pages/AboutPage"));
 
 function NotFound() {
   return (
@@ -26,7 +25,6 @@ const routes = [
     element: <Root />,
     children: [
       { index: true, element: <HomePage /> },
-      { path: "about", element: <AboutPage /> },
       { path: "contact", element: <ContactPage /> },
       { path: "products", element: <Products /> },
       { path: "completed-works", element: <CompletedWorks /> },

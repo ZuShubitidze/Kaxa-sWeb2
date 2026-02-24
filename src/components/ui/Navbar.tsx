@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -11,39 +11,47 @@ import { ModeToggle } from "../theme/mode-toggle";
 
 const Navbar = () => {
   return (
-    <>
+    <header className="mb-8">
       {/* Computer Menu */}
       <nav className="hidden md:block">
         <div className="flex flex-row items-center md:gap-20 p-10 ">
           <ModeToggle />
-          <Link
+          <NavLink
             to={"/"}
-            className="hover:bg-white hover:text-black p-2 rounded-md transition-all duration-300"
+            className={({ isActive }) =>
+              `dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white p-2 rounded-md transition-all duration-300 ${isActive ? "dark:bg-white dark:text-black bg-black text-white" : ""}`
+            }
           >
             მთავარი გვერდი
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to={"/completed-works"}
-            className="hover:bg-white hover:text-black p-2 rounded-md transition-all duration-300"
+            className={({ isActive }) =>
+              `dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white p-2 rounded-md transition-all duration-300 ${isActive ? "dark:bg-white dark:text-black bg-black text-white" : ""}`
+            }
           >
-            შესრულებული სამუშაოები
-          </Link>
-          <Link
+            სასაფლაოს მოპირკეთება
+          </NavLink>
+          <NavLink
             to={"/products"}
-            className="hover:bg-white hover:text-black p-2 rounded-md transition-all duration-300"
+            className={({ isActive }) =>
+              `dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white p-2 rounded-md transition-all duration-300 ${isActive ? "dark:bg-white dark:text-black bg-black text-white" : ""}`
+            }
           >
-            პროდუქტები
-          </Link>
-          <Link
+            მარმარილო ნაკეთობები
+          </NavLink>
+          <NavLink
             to={"/contact"}
-            className="hover:bg-white hover:text-black p-2 rounded-md transition-all duration-300"
+            className={({ isActive }) =>
+              `dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white p-2 rounded-md transition-all duration-300 ${isActive ? "dark:bg-white dark:text-black bg-black text-white" : ""}`
+            }
           >
             კონტაქტი
-          </Link>
+          </NavLink>
         </div>
       </nav>
       {/* Mobile Menu */}
-      <div className="flex md:hidden p-10 gap-2">
+      <nav className="flex md:hidden p-10 gap-2">
         <ModeToggle />
         <NavigationMenu className="flex gap-5">
           <NavigationMenuList>
@@ -60,28 +68,34 @@ const Navbar = () => {
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
                   <a
+                    href="/completed-works"
+                    className="hover:bg-white hover:text-black p-2 rounded-md transition-all duration-300"
+                  >
+                    შესრულებული სამუშაოები
+                  </a>
+                </NavigationMenuLink>
+                <NavigationMenuLink asChild>
+                  <a
+                    href="/products"
+                    className="hover:bg-white hover:text-black p-2 rounded-md transition-all duration-300"
+                  >
+                    პროდუქტები
+                  </a>
+                </NavigationMenuLink>
+                <NavigationMenuLink asChild>
+                  <a
                     href="/contact"
                     className="hover:bg-white hover:text-black p-2 rounded-md transition-all duration-300"
                   >
                     კონტაქტი
                   </a>
                 </NavigationMenuLink>
-                <NavigationMenuLink asChild>
-                  <a
-                    href="/about"
-                    className="hover:bg-white hover:text-black p-2 rounded-md transition-all duration-300"
-                  >
-                    ჩემს შესახებ
-                  </a>
-                </NavigationMenuLink>
-                {/* <Link to={"/"}>მთავარი გვერდი</Link> */}
               </NavigationMenuContent>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
-      </div>
-    </>
+      </nav>
+    </header>
   );
 };
-
 export default Navbar;
