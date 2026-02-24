@@ -27,19 +27,12 @@ const Products = () => {
       <ul className="flex flex-col gap-20">
         {productsArray.map(({ id, img, name, price }: WorkCardType) => (
           <li
-            className="flex flex-col md:flex-row gap-2 md:gap-10 border-b border-gray-300 pb-10 scroll-mt-20"
+            className="flex flex-col gap-2 md:gap-10 border-b border-gray-300 pb-10 scroll-mt-20"
             id={`product-${id}`}
             key={id}
           >
             <WorkCard key={id} img={img} name={name} />
             <div className="flex flex-col gap-10">
-              <p>
-                This is the description of this work Lorem ipsum dolor sit amet
-                consectetur adipisicing elit. Facilis laboriosam nemo aspernatur
-                labore, voluptates vitae necessitatibus sed cum porro quasi.
-                Quos soluta quisquam alias totam corrupti dignissimos doloremque
-                aut quae!
-              </p>
               <p>ფასი: {price}</p>
             </div>
           </li>

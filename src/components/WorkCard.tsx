@@ -21,7 +21,7 @@ const WorkCard = ({ img, name }: { img: string | string[]; name: string }) => {
         {images.map((image, index) => (
           <Dialog key={index}>
             <DialogTrigger asChild>
-              <div className="aspect-square w-full overflow-hidden rounded-md bg-muted cursor-zoom-in border">
+              <div className="aspect-3/4 w-full overflow-hidden rounded-md bg-muted cursor-zoom-in border">
                 <img
                   src={image}
                   alt={`${name}-${index}`}
