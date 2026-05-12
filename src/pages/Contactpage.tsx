@@ -3,12 +3,12 @@ import SEO from "@/components/SEO";
 const contacts = [
   {
     name: "Kaxa Shubitidze",
-    email: "kaxabershubitidze123@gmail.com",
+    email: "marmarilograniti@proton.me",
     phone: "599 92 35 98",
   },
   {
     name: "Zura Shubitidze",
-    email: "zurashubitidze123@gmail.com",
+    email: "marmarilograniti@proton.me",
     phone: "558 18 85 48",
   },
 ];
